@@ -1,0 +1,4 @@
+#necessary for mocking final classes
+#see https://stackoverflow.com/questions/14292863/how-to-mock-a-final-class-with-mockito
+#this workaround might be mitigated in future mockito releases
+mock-maker-inline
