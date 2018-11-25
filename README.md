@@ -7,9 +7,10 @@ API Usage
 ------------------------------------------------
 In order to use it you will need to register for a developer key here: https://api-portal.tfl.gov.uk/
 
-Please get a tfl Application ID and Application Key and copy it to $HOME/.gradle/gradle.properties as follows:
+Please get a TFL Application ID and Application Key and copy it to $HOME/.gradle/gradle.properties as follows:
 
 ROAD_API_ID="XXX"
+
 ROAD_API_KEY="YYY"
 
 Application Architecture
@@ -40,7 +41,7 @@ Note that gradle build command also runs the tests for all build variants
 
 Run the tests
 ------------------------------------------------
-If you use Android Studio, navigate to src/test/java folder. There you will find all relevant test.
+If you use Android Studio, navigate to src/test/java folder. There you will find all relevant tests.
 Right click on the package and execute the desired tests. The tests provided cover 100% our
 Presenter class, which incorporates all our business logic.
 
@@ -52,6 +53,7 @@ API considerations
 ------------------------------------------------
 Currently the API returns an array with all the relevant data, in the format:
 
+```
 [
   {
     "$type": "Tfl.Api.Presentation.Entities.RoadCorridor, Tfl.Api.Presentation.Entities",
@@ -64,10 +66,12 @@ Currently the API returns an array with all the relevant data, in the format:
     "url": "/Road/a2"
   }
 ]
+```
 
 This requires an additional step on behalf of the developer so as to parse the json array. 
 Alternatively, the API could return a json object with all the relevant information, as follows:
 
+```
 {
     "$type": "Tfl.Api.Presentation.Entities.RoadCorridor, Tfl.Api.Presentation.Entities",
     "id": "a2",
@@ -78,6 +82,7 @@ Alternatively, the API could return a json object with all the relevant informat
     "envelope": "[[-0.0857,51.44091],[-0.0857,51.49438],[0.17118,51.49438],[0.17118,51.44091],[-0.0857,51.44091]]",
     "url": "/Road/a2"
 }
+```
  
 
 
