@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Road Status</string>
+    <string name="please_type_road_id">Please type road id</string>
+    <string name="submit_your_request">Submit your request</string>
+    <string name="display_name">Display Name:</string>
+    <string name="road_status">Road Status:</string>
+    <string name="road_status_description">Road Status Description:</string>
+    <string name="an_error_occurred">An error occurred:</string>
+    <string name="cannot_contact_server_please_check_your_connection">Cannot contact server. Please check your connection</string>
+    <string name="please_contact_support">Please contact support</string>
+    <string name="please_enter_valid_road_id">Please enter valid road id</string>
+
+    <string name="name" translatable="false">name</string>
+    <string name="status" translatable="false">status</string>
+    <string name="description" translatable="false">description</string>
+    <string name="error" translatable="false">error</string>
+
+</resources>

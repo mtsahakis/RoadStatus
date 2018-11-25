@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_normal_margin">16dp</dimen>
+    <dimen name="activity_small_margin">8dp</dimen>
+    <dimen name="activity_very_small_margin">4dp</dimen>
+
+    <dimen name="text_size_normal">18sp</dimen>
+    <dimen name="elevation_small">2dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
+</resources>
