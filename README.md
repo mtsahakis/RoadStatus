@@ -1,13 +1,13 @@
-Tfl Road Demo
+TfL Road Demo
 ------------------------------------------------
-This app fetches road data using the TFL Road API
+This app fetches road data using the TfL Road API
 
 
 API Usage
 ------------------------------------------------
-In order to use it you will need to register for a developer key here: https://api-portal.tfl.gov.uk/
+In order to use it you will need to register for a developer key here: https://api-portal.TfL.gov.uk/
 
-Please get a TFL Application ID and Application Key and copy it to $HOME/.gradle/gradle.properties as follows:
+Please get a TfL Application ID and Application Key and copy it to $HOME/.gradle/gradle.properties as follows:
 
 ROAD_API_ID="XXX"
 
@@ -56,7 +56,7 @@ Currently the API returns an array with all the relevant data, in the format:
 ```
 [
   {
-    "$type": "Tfl.Api.Presentation.Entities.RoadCorridor, Tfl.Api.Presentation.Entities",
+    "$type": "TfL.Api.Presentation.Entities.RoadCorridor, TfL.Api.Presentation.Entities",
     "id": "a2",
     "displayName": "A2",
     "statusSeverity": "Good",
@@ -73,7 +73,7 @@ Alternatively, the API could return a json object with all the relevant informat
 
 ```
 {
-    "$type": "Tfl.Api.Presentation.Entities.RoadCorridor, Tfl.Api.Presentation.Entities",
+    "$type": "TfL.Api.Presentation.Entities.RoadCorridor, TfL.Api.Presentation.Entities",
     "id": "a2",
     "displayName": "A2",
     "statusSeverity": "Good",

@@ -59,7 +59,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxandroid}"
     implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxjava}"
     // okhttp interceptor
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
     // logging
     implementation 'com.jakewharton.timber:timber:4.5.1'
 }
