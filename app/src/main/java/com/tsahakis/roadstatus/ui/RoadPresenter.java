@@ -42,6 +42,9 @@ public class RoadPresenter implements RoadContract.Presenter {
         mView.hideResultContainer();
         mView.hideErrorContainer();
 
+        // increment test resource
+        mView.incrementTestResource();
+
         // make an api call
         mCompositeDisposable.add(mRoadService.getRoadStatus(roadId)
                 .subscribeOn(Schedulers.io())
@@ -69,14 +72,19 @@ public class RoadPresenter implements RoadContract.Presenter {
     }
 
     private void onSuccessfulResult(RoadData roadData) {
+        // display correct views for success
         mView.hideProgressBar();
         mView.showResultContainer();
         mView.setDisplayNameText(roadData.getDisplayName());
         mView.setRoadStatusText(roadData.getStatusSeverity());
         mView.setRoadStatusDescriptionText(roadData.getStatusSeverityDescription());
+
+        // decrement test resource
+        mView.decrementTestResource();
     }
 
     private void onErrorResult(Throwable e) {
+        // display correct views for failure
         mView.hideProgressBar();
         mView.logException(e);
         mView.showErrorContainer();
@@ -93,6 +101,9 @@ public class RoadPresenter implements RoadContract.Presenter {
         } else {
             mView.showContactSupportError();
         }
+
+        // decrement test resource
+        mView.decrementTestResource();
     }
 
 }

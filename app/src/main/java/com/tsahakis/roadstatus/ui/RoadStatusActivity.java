@@ -2,6 +2,9 @@ package com.tsahakis.roadstatus.ui;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.VisibleForTesting;
+import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -19,6 +22,8 @@ public class RoadStatusActivity extends AppCompatActivity implements RoadContrac
 
     @Inject
     RoadService mRoadService;
+
+    private CountingIdlingResource mIdlingResource;
 
     private ActivityRoadStatusBinding mBinding;
     private RoadPresenter mPresenter;
@@ -108,7 +113,30 @@ public class RoadStatusActivity extends AppCompatActivity implements RoadContrac
     }
 
     @Override
+    public void incrementTestResource() {
+        if (mIdlingResource != null) {
+            mIdlingResource.increment();
+        }
+    }
+
+    @Override
+    public void decrementTestResource() {
+        if (mIdlingResource != null) {
+            mIdlingResource.decrement();
+        }
+    }
+
+    @Override
     public void logException(Throwable e) {
         Timber.e(e);
+    }
+
+    @VisibleForTesting
+    @NonNull
+    public CountingIdlingResource getIdlingResource() {
+        if (mIdlingResource == null) {
+            mIdlingResource = new CountingIdlingResource("network-call");
+        }
+        return mIdlingResource;
     }
 }

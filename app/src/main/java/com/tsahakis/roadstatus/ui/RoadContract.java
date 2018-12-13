@@ -29,6 +29,10 @@ public interface RoadContract {
         void showContactSupportError();
 
         void showInvalidInputError();
+
+        void incrementTestResource();
+
+        void decrementTestResource();
     }
 
     interface Presenter {
